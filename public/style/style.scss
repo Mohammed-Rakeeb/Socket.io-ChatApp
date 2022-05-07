@@ -1,0 +1,422 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    block-size: border-box;
+}
+
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+$light-blue: #0365f8;
+$black: black;
+$dark-grey: #3f3f3f;
+$white: white;
+body {
+    background-color: #151320;
+    font-family: 'Poppins', sans-serif;
+}
+
+.chatApp-container {
+    // display: flex;
+    // width: 100rem;
+    // // align-items: center;
+    // // justify-content: center;
+    // flex-direction: column;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    border-radius: 5px;
+    overflow: hidden;
+    header {
+        background-color: #111;
+        display: flex;
+        color: #fff;
+        padding: 7px 20px;
+        justify-content: space-between;
+        align-items: center;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        a {
+            padding: 5px 10px;
+            text-decoration: none;
+            color: $white;
+            border: 1px solid $white;
+            font-size: 15px;
+            cursor: pointer;
+            outline: none;
+        }
+        button {
+            background-color: transparent;
+            color: white;
+            font-size: 15px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            display: none;
+        }
+        h1 {
+            font-size: xx-large;
+        }
+    }
+}
+
+.chat-main {
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    padding: 20px;
+    .users-online {
+        width: 350px;
+        color: $white;
+        padding: 15px 10px;
+        background-color: $dark-grey;
+        border-radius: 10px;
+        margin-right: 20px;
+        a {
+            display: none;
+        }
+        .user-header {
+            display: flex;
+            font-size: large;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px white solid;
+            margin-bottom: 15px;
+            .no-users {
+                background-color: $white;
+                border-radius: 50%;
+                width: 18px;
+                height: 18px;
+                h4 {
+                    margin-bottom: 2px;
+                    text-align: center;
+                    font-weight: bold;
+                    color: rgb(5, 5, 5);
+                }
+            }
+        }
+        .user-list ul li {
+            margin-bottom: 10px;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+    }
+    .message-container {
+        background-color: $dark-grey;
+        width: 100%;
+        border-radius: 10px;
+        .chats {
+            height: 500px;
+            padding: 20px;
+            overflow-y: scroll;
+            .message {
+                display: flex;
+                padding: 10px;
+            }
+            .message div {
+                max-width: 80%;
+                background-color: #fff;
+                padding: 5px;
+                border-radius: 10px;
+            }
+            .message.my-msg {
+                justify-content: flex-end;
+            }
+            .message.other-msg {
+                justify-content: flex-start;
+            }
+            .message .user-name {
+                font-size: 13px;
+                color: #555;
+                margin-bottom: 5px;
+            }
+            .message .msg {
+                word-wrap: break-word;
+                font-weight: bold;
+            }
+            .join-leave-update {
+                text-align: center;
+                padding: 10px;
+                font-style: italic;
+                font-size: 0.9rem;
+                color: white;
+            }
+        }
+        .form-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            padding: 20px;
+            input {
+                width: 100%;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 50px 0 0 50px;
+            }
+            .send-btn {
+                padding: 5px 15px;
+                font-weight: 600;
+                color: white;
+                border: none;
+                outline: none;
+                letter-spacing: 0.5px;
+                background-color: $light-blue;
+                letter-spacing: 0.5px;
+                border-radius: 0 50px 50px 0;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+// Index
+.join-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $dark-grey;
+    width: 40%;
+    height: 40%;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgb(255, 255, 255);
+    .join-header {
+        font-size: 50px;
+        color: white;
+    }
+    .join-main {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        color: white;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media (max-width: 780px) {
+    .chatApp-container {
+        width: 95%;
+        header {
+            button {
+                display: block;
+            }
+        }
+        a {
+            display: none;
+        }
+    }
+    .chat-main {
+        position: relative;
+        .users-online {
+            padding: 10px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            left: 0;
+            width: 97.2%;
+            border-radius: 0 0 10px 10px;
+            height: max-content;
+            z-index: 11;
+            box-shadow: 0 15px 20px -20px black;
+            display: flex;
+            flex-direction: column;
+            display: none;
+            a {
+                padding: 5px 10px;
+                text-decoration: none;
+                color: $white;
+                border: 1px solid $white;
+                width: 100px;
+                font-size: 15px;
+                cursor: pointer;
+                outline: none;
+                text-align: center;
+                display: block;
+                align-self: flex-end;
+            }
+        }
+        .users-online.active {
+            display: block;
+        }
+    }
+}
+
+@media (max-width: 519px) {
+    .chatApp-container {
+        width: 100%;
+        height: 100%;
+    }
+    .chat-main {
+        position: relative;
+        .users-online {
+            padding: 10px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            left: 0;
+            width: 96%;
+            border-radius: 0 0 10px 10px;
+            height: max-content;
+            z-index: 11;
+            box-shadow: 0 15px 20px -20px black;
+            display: flex;
+            flex-direction: column;
+            display: none;
+            a {
+                padding: 5px 10px;
+                text-decoration: none;
+                color: $white;
+                border: 1px solid $white;
+                width: 100px;
+                font-size: 15px;
+                cursor: pointer;
+                outline: none;
+                text-align: center;
+                display: block;
+                align-self: flex-end;
+            }
+        }
+        .message-container {
+            .chats {
+                min-height: 75vh;
+            }
+        }
+    }
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Comforter&amp;family=Festive&amp;family=Indie+Flower&amp;family=Montserrat:ital,wght@0,300;0,700;1,400;1,500&amp;family=Roboto:wght@100;300;400&amp;display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="chatApp-container">
+        <header>
+            <h1>UofC-Chat</h1>
+            <a href="index.html" id="leave-chat">Leave</a>
+            <button class="hamburger"><i class="fas fa-bars"></i></button>
+        </header>
+
+        <div class="chat-main">
+
+            <div class="users-online">
+                <a href="#index" id="leave-chat">Leave</a>
+                <div class="user-header">
+
+                    <h3><i class="fas fa-users"></i> Users</h3>
+                    <div class="no-users">
+                        <h4></h4>
+                    </div>
+
+                </div>
+                <div class="user-list">
+                    <ul id="users">
+                        <!-- <li>don</li>
+                        <li>mon</li>
+                        <li>lon</li> -->
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="message-container">
+                <div class="you-are"></div>
+                <div class="chats">
+                    <!-- <div class="message my-msg">
+                        <div>
+                            <div class="user-name">You <span>2:15</span></div>
+                            <div class="msg">Hi</div>
+                        </div>
+
+                    </div>
+                    <div class="join-leave-update">
+                        XYZ joined the chat
+                    </div>
+                    <div class="message other-msg">
+                        <div>
+                            <div class="user-name">XYZ <span>2:15</span> </div>
+                            <div class="msg">Hi</div>
+                        </div>
+                    </div> -->
+                </div>
+                <div class="form-container">
+
+                    <input type="text" name="" id="msg" placeholder="Type your message..." required>
+
+                    <button class="send-btn"><i class="fas fa-paper-plane"></i> </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+
+    <script>
+        const btn = document.getElementsByClassName('hamburger')[0]
+        const target = document.getElementsByClassName('users-online')[0]
+
+        btn.addEventListener('click', () => {
+            target.classList.toggle('active')
+        })
+    </script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.10.3/qs.min.js" integrity="sha512-juaCj8zi594KHQqb92foyp87mCSriYjw3BcTHaXsAn4pEB1YWh+z+XQScMxIxzsjfM4BeVFV3Ij113lIjWiC2w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/client.js"></script>
+
+</body>
+
+</html>
